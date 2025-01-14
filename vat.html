@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAT Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>VAT Calculator</h1>
+        <nav>
+            <ul>
+                <li><a href="calculator.html">Normal Calculator</a></li>
+                <li><a href="scientific.html">Scientific Calculator</a></li>
+                <li><a href="vat.html">VAT Calculator</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="vat-calculator">
+            <h2>Calculate VAT for Your Price</h2>
+            <div class="form-group">
+                <label for="price">Price (Excluding VAT): </label>
+                <input type="number" id="price" placeholder="Enter price">
+            </div>
+
+            <div class="form-group">
+                <label for="currency">Select Country and Currency: </label>
+                <select id="currency" onchange="updateCurrencySymbol()">
+                    <option value="USD" data-vat="7">USA (USD) - VAT: 7%</option>
+                    <option value="EUR" data-vat="20">Germany (EUR) - VAT: 20%</option>
+                    <option value="INR" data-vat="18">India (INR) - VAT: 18%</option>
+                    <option value="GBP" data-vat="20">UK (GBP) - VAT: 20%</option>
+                    <option value="AUD" data-vat="10">Australia (AUD) - VAT: 10%</option>
+                    <option value="CAD" data-vat="5">Canada (CAD) - VAT: 5%</option>
+                    <!-- Add more countries and VAT rates here -->
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vat">VAT Rate (%): </label>
+                <input type="number" id="vat" placeholder="Enter VAT rate" disabled>
+            </div>
+
+            <button onclick="calculateVAT()">Calculate VAT</button>
+
+            <div id="result" class="result"></div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>VAT Rates for 90+ Countries</h3>
+        <ul>
+            <!-- List of countries and their VAT rates -->
+            <li>USA - VAT: 7%</li>
+            <li>Germany - VAT: 20%</li>
+            <li>India - VAT: 18%</li>
+            <li>UK - VAT: 20%</li>
+            <li>Australia - VAT: 10%</li>
+            <li>Canada - VAT: 5%</li>
+            <!-- Add more countries with their VAT rates here -->
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
