@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAT Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <head>
+    <!-- Other head content like title, meta tags, etc. -->
+    <link rel="icon" href="https://img.icons8.com/?size=48&id=81443&format=png" type="image/png">
+</head>
+
+</head>
+<body>
+
+<header>
+  <h1>VAT Calculator</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Normal Calculator</a></li>
+      <li><a href="scientific.html">Scientific Calculator</a></li>
+      <li><a href="vat.html">VAT Calculator</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <div class="vat-calculator">
+    <h2>Calculate VAT for Your Price</h2>
+    <div class="form-group">
+      <label for="price">Price (Excluding VAT): </label>
+      <input type="number" id="price" placeholder="Enter price">
+    </div>
+    <div class="form-group">
+      <label for="currency">Select Country and Currency: </label>
+      <select id="currency" onchange="updateCurrencySymbol()">
+        <option value="USD" data-vat="7">USA (USD) - VAT: 7%</option>
+        <option value="EUR" data-vat="20">Germany (EUR) - VAT: 20%</option>
+        <option value="INR" data-vat="18">India (INR) - VAT: 18%</option>
+        <option value="GBP" data-vat="20">UK (GBP) - VAT: 20%</option>
+        <option value="AUD" data-vat="10">Australia (AUD) - VAT: 10%</option>
+        <option value="CAD" data-vat="5">Canada (CAD) - VAT: 5%</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="vat">VAT Rate (%): </label>
+      <input type="number" id="vat" placeholder="Enter VAT rate" disabled>
+    </div>
+    <button onclick="calculateVAT()">Calculate VAT</button>
+    <div id="result" class="result"></div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2025 Your Calculator App. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
